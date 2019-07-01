@@ -1,0 +1,7 @@
+<ul>
+  <li class="text" *ngFor="let unItem of this.listadoTurnos$ | async">
+    {{unItem.id}}
+    {{unItem.hora}}
+    {{unItem.fecha}}
+  </li>
+</ul>
