@@ -1,6 +1,6 @@
 export interface ITurno {
-  id: string;
-  hora?: Date;
-  fecha?: Date;
+  id?: string;
+  hora?: string;
+  fecha?: string;
   cliente?: string;
 }

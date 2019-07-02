@@ -1,7 +1,10 @@
 <ul>
   <li class="text" *ngFor="let unItem of this.listadoTurnos$ | async">
-    {{unItem.id}}
+    {{unItem.id}} <button (click)="baja(unItem.id)">Eliminar</button> <button (click)="Modificar(unItem.id)">Modificar</button>
     {{unItem.hora}}
     {{unItem.fecha}}
   </li>
 </ul>
+
+<button (click)="alta()">Nuevo</button>
+

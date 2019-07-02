@@ -15,7 +15,7 @@ export class DataApiTurnosService {
   private listaTurnos$: Observable<Array<ITurno>>;
 
   constructor(private conexiondb: ConexionDBService<ITurno>) {
-
+    conexiondb.NombreColeccion = 'turnos';
   }
 
   public guardarNuevoTurno(nuevoTurno: ITurno) {
@@ -23,12 +23,23 @@ export class DataApiTurnosService {
   }
 
   public traerTodosLosTurnos(): Observable<Array<ITurno>> {
-    return this.listaTurnos$ = this.conexiondb.traerTodos('turnos');
+    return this.listaTurnos$ = this.conexiondb.traerTodos();
   }
 
   public traerTodosLosTurnosConId(): Observable<Array<ITurno>> {
-    return this.listaTurnos$ = this.conexiondb.traerTodosConId('turnos');
+    return this.listaTurnos$ = this.conexiondb.traerTodosConId();
   }
 
+  public crearTurno(nuevoTurno: ITurno) {
+    return this.conexiondb.crearDocumento(nuevoTurno);
+  }
+
+  public eliminarTurno(idTurno: string) {
+    return this.conexiondb.eliminarDocumento(idTurno);
+  }
+
+  public Modificar(idTurno: string, turnoModificado: ITurno) {
+    return this.conexiondb.editarDocumento(idTurno, turnoModificado);
+  }
 
 }
