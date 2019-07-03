@@ -41,7 +41,8 @@ export class HomeComponent implements OnInit {
       hora: '20:30'
     };
 
-    this.dataApiTurnos.
+    this.dataApiTurnos.Modificar(id, nuevoTurno2);
+
   }
 
 }
